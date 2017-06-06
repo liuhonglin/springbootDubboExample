@@ -17,10 +17,10 @@
     <!-- <dubbo:registry address="zookeeper://10.170.219.98:2181,10.173.55.173:2181" /> -->
 
     <!-- 注册地址，用于消费者寻找服务 -->
-    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" />
+    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}" check="false"/>
     <dubbo:consumer timeout="5000" />
 
     <!-- 引用的服务 -->
-    <dubbo:reference id="exampleService" interface="lhl.test.dubbo.api.example.ExampleService" />
+    <dubbo:reference id="exampleService" interface="lhl.test.dubbo.api.example.ExampleService" version="0.0.1"/>
 
 </beans>
