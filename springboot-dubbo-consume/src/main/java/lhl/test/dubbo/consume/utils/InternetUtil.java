@@ -53,8 +53,9 @@ public class InternetUtil {
             luaScript.append(line);
         }*/
         //new File(InternetUtil.class.getResource("/").getPath()+File.separator+"lua/limit.lua")
-        String luaScript = Files.toString(new File("E:\\program files\\IdeaWorkspace\\test\\springboot-dubbo-consume\\target\\classes\\lua\\limit.lua"),
-                Charset.defaultCharset());
+
+        String luaScript = Files.toString(new File(InternetUtil.class.getClassLoader().getResourceAsStream("lua/limit.lua"),
+                                                    Charset.defaultCharset()););
 
         Jedis jedis = new Jedis("127.0.0.1", 6379);
         // 此处将当前时间截取秒数
